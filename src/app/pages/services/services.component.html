@@ -1,0 +1,15 @@
+<div class="services-page">
+    <h2>Ofrecemos los siguientes servicios:</h2>
+    <div class="services-list">
+        @for (service of services; track $index) {
+            <div class="service">
+                <img  class="service-image" ngSrc="{{ service.img }}" alt="Image" width="340" height="224">
+                <div class="service-text">
+                    <h3>{{ service.name }}</h3>
+                    <p>{{ service.description }}</p>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>

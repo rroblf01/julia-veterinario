@@ -1,0 +1,31 @@
+<div class="contact-page">
+    <div class="text-container">
+        <h2>¡Estaremos encantados de verte en persona o de que nos contactes!</h2>
+
+        <div>
+            <h3>Puedes reservar un día aquí:</h3>
+            <mat-form-field>
+                <mat-label>Choose a date</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              
+        </div>
+        <div class="margin-top">
+            <h3>Teléfono: 987789654</h3>
+            <h3>Email: email_de_ejemplo&#64;email.com</h3>
+            <h3>Dirección: Calle de ejemplo, número 123, 12345, Ciudad de ejemplo</h3>
+        </div>
+
+        <div class="margin-top">
+            <h4>Horario de atención al público:</h4>
+            <h4>Lunes a viernes: 9:00 - 14:00 y 16:00 - 20:00</h4>
+            <h4>Sábados: 9:00 - 14:00</h4>
+            <h4>Domingos y festivos: Cerrado</h4>
+        </div>
+
+    </div>
+
+</div>
