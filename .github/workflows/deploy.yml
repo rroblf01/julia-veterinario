@@ -29,10 +29,15 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        run: "DENO_FUTURE=1 deno install --allow-scripts"
+        run: "npm install"
 
       - name: Build step
         run: "npm run build"
 
       - name: Upload to Deno Deploy
-        run : "deno task serve:ssr:julia-veterinario"
+        uses: denoland/deployctl@v1
+        with:
+          project: "julia-veterinario"
+          entrypoint: "dist/julia-veterinario/server/server.mjs"
+          # entrypoint: "https://deno.land/std@0.217.0/http/file_server.ts"
+          # root: "dist/julia-veterinario/browser"
