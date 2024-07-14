@@ -21,7 +21,7 @@ jobs:
       - name: Install Deno
         uses: denoland/setup-deno@v1
         with:
-          deno-version: v1.45.1
+          deno-version: v1.45.2
 
       - name: Install Node.js
         uses: actions/setup-node@v4
@@ -29,14 +29,11 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        run: "DENO_FUTURE=1 deno install"
+        run: "DENO_FUTURE=1 deno install --allow-scripts"
 
       - name: Build step
         run: "npm run build"
 
       - name: Upload to Deno Deploy
         uses: denoland/deployctl@v1
-        with:
-          project: "julia-veterinario"
-          entrypoint: "https://deno.land/std@0.217.0/http/file_server.ts"
-          root: "dist/julia-veterinario/browser"
+        run : "deno task serve:ssr:julia-veterinario"
